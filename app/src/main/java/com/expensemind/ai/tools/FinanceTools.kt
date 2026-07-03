@@ -23,8 +23,10 @@ class FinanceTools(private val db: AppDatabase) {
     }
 
     /** getCategorySummary(): spend broken down by category for a given month */
-    suspend fun getCategorySummary(yearMonth: String = YearMonth.now().format(monthFormatter)) =
-        db.transactionDao().getCategoryBreakdown(*monthRange(yearMonth))
+    suspend fun getCategorySummary(yearMonth: String = YearMonth.now().format(monthFormatter)): List<com.expensemind.ai.data.CategoryTotal> {
+        val (start, end) = monthRange(yearMonth)
+        return db.transactionDao().getCategoryBreakdown(start, end)
+    }
 
     /** getMerchantSpend(): total spend at a specific merchant (fuzzy match) */
     suspend fun getMerchantSpend(merchantQuery: String) =

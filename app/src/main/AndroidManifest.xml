@@ -9,7 +9,6 @@
         android:allowBackup="false"
         android:label="ExpenseMind AI"
         android:theme="@style/Theme.ExpenseMindAI"
-        android:icon="@mipmap/ic_launcher"
         android:extractNativeLibs="true">
 
         <activity

@@ -1,0 +1,3 @@
+<resources>
+    <style name="Theme.ExpenseMindAI" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>
